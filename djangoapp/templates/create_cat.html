@@ -6,7 +6,7 @@
 </head>
 <body>
     {% load static %}
-    <img src="{% static 'cat.jpg' %}" alt="wtf"/>
+    <img src="{% static 'cat.jpeg' %}" alt="wtf"/>
     <form method="post" action="{% url 'create_cat' %}">
     {% csrf_token %}
     <input name="title"/>

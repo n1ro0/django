@@ -28,9 +28,6 @@ def books(request):
 def create_cat(request):
     if request.method == "POST":
         models.Category.objects.create(title=request.POST["title"])
-        categories = []
-        for category in models.Category.objects.all():
-            categories.append(category.title)
-        return HttpResponse("\n".join(categories))
+        return categories(request)
     if request.method == "GET":
         return render(request, "create_cat.html")

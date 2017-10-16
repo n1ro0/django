@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create category</title>
+</head>
+<body>
+    {% load static %}
+    <img src="{% static 'cat.jpg' %}" alt="wtf"/>
+    <form method="post" action="{% url 'create_cat' %}">
+    {% csrf_token %}
+    <input name="title"/>
+    <input type="submit" value="OK"/>
+    </form>
+</body>
+</html>

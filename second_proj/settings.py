@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CELERY_BROKER_URL = "redis://"
+
+CELERY_RESULT_BACKEND = "redis://"
+
+CELERY_TIMEZONE = 'UTC'
 
 # Application definition
 
@@ -38,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djangoapp',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

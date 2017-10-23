@@ -7,7 +7,16 @@
 <body>
     <form method="post" action="{% url 'create_book' %}">
     {% csrf_token %}
-    <input name="title"/>
+    <label>Title: </label>
+    <input name="title"/><br />
+    <label>Year: </label>
+    <input name="year"/><br />
+    <label>Description: </label>
+    <input name="description"/><br />
+    <label>Category id: </label>
+    <input name="category_id"/><br />
+    <label>Image: </label>
+    <input type="file" name="picture"/><br />
     <input type="submit" value="OK"/>
     </form>
 </body>

@@ -21,9 +21,17 @@ def categories(request):
 def books(request):
     books = []
     for book in models.Book.objects.all():
-        books.append(book.title)
+        books.append((book.title, book.year, book.description))
     return render(request, "books.html", context={"books": books})
 
+def create_book(request):
+    #if request.method == "POST":
+        #models.Book.objects.create(title=request.POST["title"], year=int(request.POST["year"]),
+            #                           description=request.POST["description"], category_id=int(request.POST["category_id"]),
+        #       picture=request.FILES["picture"])
+        #return books(request)
+    if request.method == "GET":
+        return render(request, "create_book.html")
 
 def create_cat(request):
     if request.method == "POST":

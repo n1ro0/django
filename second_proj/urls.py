@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^$', index),
     url(r'^categories/', categories),
     url(r'^books/', books),
+    url(r'^book/create/', create_book, name="create_book"),
     url(r'^create_cat/', create_cat, name="create_cat")
 ]

@@ -3,7 +3,7 @@ from django.db import models
 
 class Author(models.Model):
     name = models.CharField(max_length=30)
-    orn_year = models.IntegerField()
+    born_year = models.IntegerField()
 
 
 class Category(models.Model):
@@ -16,4 +16,5 @@ class Book(models.Model):
     description = models.TextField(max_length=1000)
     authors = models.ManyToManyField(Author)
     category = models.ForeignKey(Category)
-    preview = models.ImageField()
+    picture = models.ImageField(default=".static/cat.jpeg", upload_to='./images')
+    preview = models.ImageField(default=".static/cat.jpeg", upload_to='./images')
